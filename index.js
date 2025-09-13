@@ -1,4 +1,5 @@
-
+var score = 0;
+var scoreRec = document.getElementById("scoreRec");
 
 const quiz = [
     {
@@ -73,7 +74,7 @@ function rederQestion() {
 }
 
 rederQestion();
-var score = 0;
+
 function nextQusetion(){
     currentQuestion++;
     rederQestion();
@@ -86,6 +87,7 @@ function checkCorrect(event)
         event.target.style.backgroundColor = "green";
         event.target.style.color = "White";
         score +=10;
+        scoreRec.innerHTML = "Score"+score;
     }else{
         event.target.style.backgroundColor = "red";
         event.target.style.color = "White";
