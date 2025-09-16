@@ -1,5 +1,5 @@
 var score = 0;
-var stopNum = 0;
+var stopNum = false;
 var clicked = false;
 var scoreRec = document.getElementById("scoreRec");
 
@@ -78,17 +78,23 @@ rederQestion();
 
 function nextQusetion() {
     
-    if (clicked == true) {
+    if(stopNum ==false)
+    {
+          if (clicked == true) {
         currentQuestion++;
         rederQestion();
-        stopNum++;
-        console.log(currentQuestion)
         clicked = false;
     }else{
-        alert("Please Chose any option")
+        alert("Please Chose any option");
     }
-
+    }
 }
+
+// for(var i=0; i<quiz[10].options.length; i++)
+// {
+//     if(quiz[10].options[i])
+// }
+
 
 
 function checkCorrect(event) {
